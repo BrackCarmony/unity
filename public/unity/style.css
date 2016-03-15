@@ -1,0 +1,42 @@
+body {
+  background-color: skyblue;
+  margin: 0px;
+  paddin; 0px;
+}
+
+svg {
+  background-color:white;
+  /*stroke:white;*/
+  width:100vw;
+  height:100vh;
+}
+
+h1{
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  position:fixed;
+  right:20px;
+  top:20px;
+}
+
+a{
+  text-align: center;
+  text-decoration: none;
+}
+
+a:visited{
+  opacity: .1;
+  color:black;
+}
+
+a:link{
+  opacity: .1;
+  color:black;
+}
+
+a:hover{
+  opacity: 1;
+  transition: 1s;
+
+}
