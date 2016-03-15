@@ -75,32 +75,32 @@
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 0) },
-	          "About"
+	          "Rotate"
 	        ),
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 1) },
-	          "Charts"
+	          "Rotate"
 	        ),
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 2) },
-	          "Projects"
+	          "Rotate"
 	        ),
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 3) },
-	          "React Components"
+	          "Rotate"
 	        ),
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 4) },
-	          "Interest"
+	          "Rotate"
 	        ),
 	        React.createElement(
 	          "a",
 	          { style: this.styles.link, onClick: this.gotoFace.bind(null, 5) },
-	          "Social"
+	          "Rotate"
 	        )
 	      ),
 	      React.createElement(
@@ -124,16 +124,11 @@
 	          React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "images/react.svg" }),
 	          React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "images/javascript.svg" }),
 	          React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "images/visual-basic.svg" }),
-	          React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "images/java-4.svg" }),
-	          React.createElement("img", { src: "http://lorempixel.com/51/52" }),
-	          React.createElement("img", { src: "http://lorempixel.com/51/53" }),
-	          React.createElement("img", { src: "http://lorempixel.com/51/54" }),
-	          React.createElement("img", { src: "http://lorempixel.com/52/50" }),
-	          React.createElement("img", { src: "http://lorempixel.com/52/51" }),
-	          React.createElement("img", { src: "http://lorempixel.com/52/52" }),
-	          React.createElement("img", { src: "http://lorempixel.com/52/53" }),
-	          React.createElement("img", { src: "http://lorempixel.com/52/54" }),
-	          React.createElement("img", { src: "http://lorempixel.com/53/55" }),
+	          React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "../elo.png" }),
+						React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "../globe.png" }),
+						React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "../poke.png" }),
+						React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "../q.png" }),
+						React.createElement("img", { style: { 'maxWidth': '60px', 'maxHeight': '60px' }, src: "../unity.png" }),
 	          React.createElement(
 	            "div",
 	            null,
@@ -14738,7 +14733,7 @@
 	 *
 	 * @providesModule shallowEqual
 	 * @typechecks
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -18359,7 +18354,7 @@
 	        'Instances': item.count
 	      };
 	    }));
-	    console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
+	    //console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
 	  },
 
 	  getMeasurementsSummaryMap: function getMeasurementsSummaryMap(measurements) {
@@ -18376,7 +18371,7 @@
 	  printWasted: function printWasted(measurements) {
 	    measurements = measurements || ReactDefaultPerf._allMeasurements;
 	    console.table(ReactDefaultPerf.getMeasurementsSummaryMap(measurements));
-	    console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
+	    //console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
 	  },
 
 	  printDOM: function printDOM(measurements) {
@@ -18389,7 +18384,7 @@
 	      result.args = JSON.stringify(item.args);
 	      return result;
 	    }));
-	    console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
+	    //console.log('Total time:', ReactDefaultPerfAnalysis.getTotalTime(measurements).toFixed(2) + ' ms');
 	  },
 
 	  _recordWrite: function _recordWrite(id, fnName, totalTime, args) {
@@ -20007,7 +20002,7 @@
 	  makeDots: function makeDots() {
 	    var _this = this;
 
-	    console.log(this);
+	    //console.log(this);
 	    if (this.props.points) {
 	      var count = this.props.points.length;
 	      return this.props.points.map(function (item, index) {
@@ -20054,10 +20049,10 @@
 	    for (var i = 1; i <= 6; i++) {
 	      this.styles['face' + i] = _.extend(this.styles['face' + i], this.styles.face);
 	    }
-	    //console.log(this.styles);
+	    ////console.log(this.styles);
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(newProps) {
-	    console.log('New Props', newProps, 'oldProps', this.props);
+	    //console.log('New Props', newProps, 'oldProps', this.props);
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -21739,7 +21734,7 @@
 	    this.intervals.forEach(clearInterval);
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    console.log("Firing state change?", nextProps, this.props);
+	    //console.log("Firing state change?", nextProps, this.props);
 	  }
 	};
 
@@ -21765,8 +21760,8 @@
 	  componentDidMount: function componentDidMount() {
 
 	    this.setInterval(this.moveCard, 3000); // Call a method on the mixin
-	    //console.log("Component Did Mount");
-	    //console.log(this.state.transform);
+	    ////console.log("Component Did Mount");
+	    ////console.log(this.state.transform);
 	    this.moveCard();
 	  },
 	  moveCard: function moveCard() {
@@ -21782,7 +21777,7 @@
 	    });
 	  },
 	  render: function render() {
-	    //console.log(this.state.transform)
+	    ////console.log(this.state.transform)
 	    return React.createElement(
 	      "div",
 	      { style: {
