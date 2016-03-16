@@ -65,6 +65,11 @@ ul{
   list-style: none;
 }
 
+.wrap{
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .largePi{
 transform:translate(-2px,-2px)scale(1.5,1.5);
 display: inline-block;;
