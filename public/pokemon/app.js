@@ -3,7 +3,7 @@ var pokemons = [];
 var baseUri = "http://pokeapi.co";
 var presentation = false;
 var startRange =1;
-var endRagne =(presentation?150:721);
+var endRagne =150; // (presentation?150:721);
 var imgSize = (presentation?70:40);
 var charge = (presentation?-200:-50)
 
@@ -15,6 +15,17 @@ var minYStat = 999*999*999;
 var maxXStat = 0;
 var minXStat = 999*999*999;
 var pokemonImgs;
+
+var statSelectors = {
+  hp: d=>d.stats[0].base_stat,
+  attack: d=>d.stats[1].base_stat,
+  defense: d=>d.stats[2].base_stat,
+  sp_atk: d=>d.stats[3].base_stat,
+  sp_def: d=>d.stats[4].base_stat,
+  speed: d=>d.stats[5].base_stat,
+  exp: d=>d.base_experience,
+  pkdx_id: d=>d.index
+}
 
 
 var d3Div = d3.select("#chartSvg");
@@ -33,24 +44,25 @@ function getPokemon(id){
     if (httpRequest.readyState === XMLHttpRequest.DONE) {
     // everything is good, the response is received
     var resp = JSON.parse(httpRequest.responseText);
-    var spriteRequest = new XMLHttpRequest();
-    spriteRequest.onreadystatechange = function(){
-      if (spriteRequest.readyState === XMLHttpRequest.DONE) {
-        var sprites = JSON.parse(spriteRequest.responseText);
-        resp.spriteObjects = sprites;
-        pokemons.push(resp);
+    console.log(`spy: resp`, resp); // BURN
+    console.log(`spy: resp.sprites`, resp.sprites); // BURN
+    pokemons.push(resp);
+    // var spriteRequest = new XMLHttpRequest();
+    // spriteRequest.onreadystatechange = function(){
+      // if (spriteRequest.readyState === XMLHttpRequest.DONE) {
+        // var sprites = JSON.parse(spriteRequest.responseText);
+        // resp.spriteObjects = sprites;
+        // pokemons.push(resp);
         //console.log(resp);
         updateChart();
-      }
-    }
+      // }
+    // }
 
-    spriteRequest.open('GET',"http://pokeapi.co"+resp.sprites[0].resource_uri, true);
-    spriteRequest.send('null');
     } else {
         // still not ready
     }
   }
-  httpRequest.open('GET',"http://pokeapi.co/api/v1/pokemon/"+id+"/", true);
+  httpRequest.open('GET',"/api/pokemon/"+id+"/", true);
   httpRequest.send(null);
 }
 
@@ -75,13 +87,13 @@ function updateChart(){
   pokemonImgs.enter()
   .append("svg:image")
   .classed("pokemon", true)
-  .attr("xlink:href",function(d){
-    return "." + d.spriteObjects.image;
+  .attr("href",function(d){
+    return  d.sprites.front_default;
   })
   .attr('width', imgSize)
   .attr('height', imgSize)
-  .style("x",function(d){return d[xStat]*4 +"px";})
-  .style("y",function(d){return d[yStat]*4 +"px";})
+  .style("x",function(d){ return statSelectors[xStat](d) * 4 + 'px'})
+  .style("y",function(d){ return statSelectors[yStat](d) * 4 + 'px'})
   .on('load', loadNext)
   .call(force.drag());
 
@@ -92,8 +104,10 @@ function updateChart(){
 }
 
 function setStatSort(){
-  var xStats = _.pluck(pokemons, xStat);
-  var yStats = _.pluck(pokemons, yStat);
+  var xStats = _.map(pokemons, statSelectors[xStat]);
+  console.log(`spy: xStats`, xStats); // BURN
+  var yStats = _.map(pokemons, statSelectors[yStat]);
+  console.log(`spy: yStats`, yStats); // BURN
   //console.log(pokemons);
 
    maxYStat = _.max(yStats)*1.1+10;
@@ -101,8 +115,8 @@ function setStatSort(){
    maxXStat = _.max(xStats)*1.1+10;
    minXStat = _.min(xStats)*.9-10;
 
-  //console.log(minXStat, xStats);
-  //console.log(minYStat, yStats);
+  console.log(minXStat, xStats);
+  console.log(minYStat, yStats);
 }
 
 function startPhysics(){
@@ -111,16 +125,16 @@ function startPhysics(){
 
 
 function tick(e){
-  ////console.log("Tick runninng... I be confused");
-  // _.sort(pokemons, function(a, b){return a.y-b.y});
-  // //console.log(pokemons);
+  console.log("Tick runninng... I be confused");
+  
+  
   pokemons.forEach(function(item){
     // //console.log(e, item);
     // //console.log("_----------------------");
     // //console.log(item.x);
     var k =.5;
-    item.x += ((item[xStat]-minXStat)/(maxXStat-minXStat)*(d3Div[0][0].clientWidth) - item.x)*e.alpha*k;
-    item.y += ((item[yStat]-minYStat)/(maxYStat-minYStat)*(d3Div[0][0].clientHeight) - item.y)*e.alpha*k;
+    item.x +=   ((statSelectors[xStat](item)-minXStat)/(maxXStat-minXStat)*(d3Div[0][0].clientWidth) - item.x)*e.alpha*k;
+    item.y +=   ((statSelectors[yStat](item)-minYStat)/(maxYStat-minYStat)*(d3Div[0][0].clientHeight) - item.y)*e.alpha*k;
     // //console.log(item.x);
   })
 
