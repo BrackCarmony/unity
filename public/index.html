@@ -1,159 +1,246 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Michroma" />
-  <link rel="icon"
-      type="image/png"
-      href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="icon.png">
   <title>Brack Carmony's Portfolio</title>
 </head>
 
 <body>
-  <h1>Brack Carmony</h1>
-  <article>
-    <div class="wrap">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-github" viewBox="0 0 16 16">
+      <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 16 16">
+      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M5 11L11 5M6 5h5v5"/>
+    </symbol>
+  </svg>
 
+  <header class="masthead">
+    <h1>Brack Carmony</h1>
+    <p class="tagline">Toys, games &amp; projects</p>
+    <nav class="jump">
+      <a href="#toys">Toys</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-  
-  <h2>Toys
-    <h3> Poke Graph </h3>
-    <div class="card">
-      <div class="text">
-        <p>D3 visulization using the force layout</p>
+  <div class="layout">
+    <main>
+      <section id="toys" class="group">
+        <h2>Toys</h2>
+        <div class="grid">
+
+          <article class="card">
+            <a class="shot" href="https://tabletopmaster.brackcarmony.com/"><img src="tabletop.png" alt="TableTop Master game screen"></a>
+            <div class="body">
+              <h3>TableTop Master</h3>
+              <p>Incremental game where you play as a dungeon master running campaigns. Gain infamy by killing off your players' characters, then use it to recruit more players and grow your tabletop empire.</p>
+              <div class="links">
+                <a class="btn primary" href="https://tabletopmaster.brackcarmony.com/">Play <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/BrackCarmony/TableTopMaster"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="https://dm-screen.brackcarmony.com/#battle"><img src="dm-screen.png" alt="DM Screen battle tracker"></a>
+            <div class="body">
+              <h3>DM Screen</h3>
+              <p>Minimalistic combat encounter tracker for DMs. Keeps track of hit points and initiative order, with a public facing view so players can follow the turn tracker and get a glimpse of how hurt the enemies are.</p>
+              <div class="links">
+                <a class="btn primary" href="https://dm-screen.brackcarmony.com/#battle">Open <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/BrackCarmony/dm-screen"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="/pokemon"><img src="poke.png" alt="Pokemon force graph"></a>
+            <div class="body">
+              <h3>Poke Graph</h3>
+              <p>D3 visualization using the force layout.</p>
+              <ul class="tags"><li>D3.js</li></ul>
+              <div class="links">
+                <a class="btn primary" href="/pokemon">Open <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/Kedirech/force-examples/tree/master/pokemon"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="/self-build"><img src="self-build.jpg" alt="Self building website"></a>
+            <div class="body">
+              <h3>Self Building Website</h3>
+              <p>Watch a website build itself.</p>
+              <div class="links">
+                <a class="btn primary" href="/self-build">Open <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/Kedirech/self-build"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="/unity"><img src="unity.png" alt="Serenity Tree visualization"></a>
+            <div class="body">
+              <h3>Serenity Tree</h3>
+              <p>Toy D3.js visualization using SVG text paths.</p>
+              <ul class="tags"><li>D3.js</li><li>SVG</li></ul>
+              <div class="links">
+                <a class="btn primary" href="/unity">Open <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/Kedirech/unity/tree/master/public/unity"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="/snowGlobe"><img src="globe.png" alt="Snow globe of rotating cards"></a>
+            <div class="body">
+              <h3>Snow Globe of Wonder</h3>
+              <p>Toy React visualization for rotating cards in a 3D space.</p>
+              <ul class="tags"><li>React</li></ul>
+              <div class="links">
+                <a class="btn primary" href="/snowGlobe">Open <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/Kedirech/brackPortfolio"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="projects" class="group">
+        <h2>Projects</h2>
+        <div class="grid">
+          <!-- <article class="card">
+            <a class="shot" href="http://eloeverything.com"><img src="elo.png" alt="Elo Everything"></a>
+            <div class="body">
+              <h3>Elo Everything</h3>
+              <p>Quiz application with dynamic categories and self sorting questions.</p>
+              <ul class="tags"><li>Angular</li><li>Node</li><li>Express</li><li>Passport</li><li>MongoDB</li><li>Mongoose</li></ul>
+              <div class="links">
+                <a class="btn primary" href="http://eloeverything.com">Visit <svg><use href="#icon-arrow"/></svg></a>
+                <a class="btn" href="https://github.com/kedirech/eloeverything"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article> -->
+
+          <article class="card">
+            <a class="shot" href="https://joinoutsmart.com/"><img src="outsmart.png" alt="Outsmart raccoon mascot and Elmbridge University partnership"></a>
+            <div class="body">
+              <h3>Outsmart</h3>
+              <p>Gamified educational app for introductory college math, built in partnership with Elmbridge University.</p>
+              <ul class="tags"><li>React Native</li><li>Flutter</li><li>Hasura</li><li>Anthropic API</li><li>OpenAI API</li></ul>
+              <div class="links">
+                <a class="btn primary" href="https://joinoutsmart.com/">Visit <svg><use href="#icon-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="http://savvilegal.com"><img src="savvi.png" alt="Savvi Legal"></a>
+            <div class="body">
+              <h3>Savvi Legal</h3>
+              <p>Legal document workflow automation tool.</p>
+              <ul class="tags"><li>Vue.js admin portal</li><li>Node</li><li>Express</li><li>MariaDB</li><li>Objection</li></ul>
+              <div class="links">
+                <a class="btn primary" href="http://savvilegal.com">Visit <svg><use href="#icon-arrow"/></svg></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <a class="shot" href="https://github.com/EvilTwinCo/edq_redo"><img src="q.png" alt="DevMountain Queue"></a>
+            <div class="body">
+              <h3>DevMountain Queue</h3>
+              <p>Classroom tracking tool for DevMountain. In use at all 3 of DevMountain's locations.</p>
+              <ul class="tags"><li>Angular</li><li>D3.js</li><li>Node</li><li>Express</li><li>Passport</li><li>Socket.io</li><li>MongoDB</li><li>Mongoose</li></ul>
+              <div class="links">
+                <a class="btn" href="https://github.com/EvilTwinCo/edq_redo"><svg><use href="#icon-github"/></svg> Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside id="about">
+      <div class="panel">
+        <h2>Languages</h2>
+        <ul class="chips">
+          <li>Javascript</li>
+          <li>VBA</li>
+          <li>Java</li>
+          <li>C++</li>
+        </ul>
+
+        <h2>Frameworks</h2>
+        <ul class="chips">
+          <li>Vue</li>
+          <li>Angular</li>
+          <li>Express</li>
+          <li>React</li>
+          <li>React Native</li>
+          <li>Flutter</li>
+          <li>Ember</li>
+        </ul>
+
+        <h2>Libraries</h2>
+        <ul class="chips">
+          <li>Box</li>
+          <li>Objection</li>
+          <li>D3.js</li>
+          <li>Socket.io</li>
+        </ul>
+
+        <h2>Databases</h2>
+        <ul class="chips">
+          <li>Postgres</li>
+          <li>MongoDB</li>
+          <li>FireBase</li>
+          <li>Access</li>
+        </ul>
+
+        <h2>APIs &amp; Services</h2>
+        <ul class="chips">
+          <li>Hasura</li>
+          <li>Anthropic API</li>
+          <li>OpenAI API</li>
+        </ul>
+
+        <h2>Hobbies</h2>
+        <ul class="chips">
+          <li>Dance</li>
+          <li>Theater</li>
+          <li>Cooking</li>
+          <li>Gaming</li>
+        </ul>
+
+        <h2>Favorite Colors</h2>
+        <ul class="swatches">
+          <li><span style="background:mintcream"></span>Mint Cream</li>
+          <li><span style="background:saddlebrown"></span>Saddle Brown</li>
+          <li><span style="background:whitesmoke"></span>White Smoke</li>
+          <li><span style="background:lavenderblush"></span>Lavender Blush</li>
+        </ul>
+
+        <h2>Favorite Numbers</h2>
+        <ul class="numbers">
+          <li><span class="largePi">π</span><span class="exp">²</span>/2</li>
+          <li>42</li>
+        </ul>
       </div>
-      <a href = "/pokemon"><img src="poke.png"></a>
-      <a href = "https://github.com/Kedirech/force-examples/tree/master/pokemon"<i class="fa fa-github fa-lg"></i></a>
-    </div>
-    <h3> Self Building Website </h3>
-    <div class="card">
-      <div class="text">
-        <p>Watch a website build itself.</p>
-      </div>
-      <a href = "/self-build"><img src="self-build.jpg"></a>
-      <a href = "https://github.com/Kedirech/self-build"<i class="fa fa-github fa-lg"></i></a>
-    </div>
-    <h3> Serenity Tree </h3>
-    <div class="card">
-      <div class="text">
-        <p>Toy D3.js visulization using SVG text paths</p>
-      </div>
-      <a href = "/unity">
-        <img src="unity.png">
-      </a>
-      <a href = "https://github.com/Kedirech/unity/tree/master/public/unity"<i class="fa fa-github fa-lg"></i></a>
-    </div>
-    <h3> Snow globe of Wonder </h3>
-    <div class="card">
-      <div class="text">
-        <p>Toy React visulization for rotating cards in a 3D space</p>
-      </div>
-      <a href = "/snowGlobe"><img src="globe.png"></a>
-      <a href = "https://github.com/Kedirech/brackPortfolio"<i class="fa fa-github fa-lg"></i></a>
-    </div>
-  </h2>
-  <h2>Projects
-    <!-- <h3> Elo Eveything </h3>
-    <div class="card">
-      <div class="text">
-        <p>Quiz application with dynamic categories and self sorting questions. </p>
-        <p>Angular front end. </p>
-        <p>Node backend with express and passport. </p>
-        <p>MongoDB using mongoose. </p>
-      </div>
-        <a href = "http://eloeverything.com"><img src="elo.png"></a>
-        <a href = "https://github.com/kedirech/eloeverything"<i class="fa fa-github fa-lg"></i></a>
-    </div> -->
-    <h3>Savvi Legal</h3>
-    <div class="card">
-      <div class="text">
-        <p>Legal document workflow automation tool </p>
-        <p>Vue.js Admin Portal</p>
-        <p>Node backend with express</p>
-        <p>MariaDB using Objection </p>
-      </div>
-      <a href = "http://savvilegal.com"><img src="savvi.png"></a>
-
-    </div>
-    <h3> DevMountain Queue</h3>
-    <div class="card">
-      <div class="text">
-        <p>Classroom tracking tool for DevMountain. In use at all 3 of DevMountain's locations.</p>
-        <p>Angular front end. D3.js Visualizations. </p>
-        <p>Node backend with express, passport, and socket.io</p>
-        <p>MongoDB using mongoose. </p>
-      </div>
-      <a href = "https://github.com/EvilTwinCo/edq_redo"><img src="q.png"></a>
-      <a href = "https://github.com/EvilTwinCo/edq_redo"<i class="fa fa-github fa-lg"></i></a>
-    </div>
-  </h2>
-
-</div>
-</article>
-<section>
-  <div>
-    <h2>Languages</h2>
-    <ul>
-      <li>Javascript</li>
-      <li>VBA</li>
-      <li>Java</li>
-      <li>C++</li>
-    </ul>
-
-    <h2>Frameworks</h2>
-    <ul>
-      <li>Vue</li>
-      <li>Angular</li>
-      <li>Express</li>
-      <li>React</li>
-      <li>Ember</li>
-    </ul>
-
-    <h2>Libraries</h2>
-    <ul>
-      <li>Box</li>
-      <li>Objection</li>
-      <li>D3.js</li>
-      <li>Socket.io</li>
-    </ul>
-
-    <h2>Databases</h2>
-    <ul>
-      <li>Postgres</li>
-      <li>MongoDB</li>
-      <li>FireBase</li>
-      <li>Access</li>
-    </ul>
-
-    <h2>Hobbies</h2>
-    <ul>
-      <li>Dance</li>
-      <li>Theater</li>
-      <li>Cooking</li>
-      <li>Gaming</li>
-    </ul>
-
-    <h2>Favorite Colors</h2>
-    <ul>
-      <li>Mint Cream</li>
-      <li>Saddle Brown</li>
-      <li>White Smoke</li>
-      <li>Lavender Blush</li>
-    </ul>
-
-    <h2>Favorite Numbers</h2>
-    <ul>
-      <li><span class = "largePi" >π</span><span class = "exp">²</span>/2</li>
-      <li>42</li>
-    </ul>
-
+    </aside>
   </div>
-</section>
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <footer>© Brack Carmony</footer>
 </body>
 
 </html>
